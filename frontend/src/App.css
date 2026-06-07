@@ -1,0 +1,246 @@
+.app-shell {
+  min-height: 100svh;
+  padding: 40px 24px;
+  background:
+    linear-gradient(135deg, rgba(28, 95, 120, 0.08), rgba(188, 76, 61, 0.08)),
+    var(--color-page);
+}
+
+.page-heading {
+  width: min(1120px, 100%);
+  margin: 0 auto 28px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-heading h1 {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: 2.4rem;
+  line-height: 1.08;
+}
+
+.page-heading p:last-child {
+  max-width: 680px;
+  margin: 12px 0 0;
+  color: var(--color-muted);
+}
+
+.workspace {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(320px, 430px) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.panel {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  box-shadow: 0 18px 45px rgba(16, 24, 40, 0.08);
+}
+
+.form-panel,
+.result-panel {
+  padding: 24px;
+}
+
+.form-panel h2,
+.result-panel h2 {
+  margin: 0 0 18px;
+  color: var(--color-heading);
+  font-size: 1.2rem;
+}
+
+.scene-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-control label {
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+.form-control input,
+.form-control select,
+.form-control textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 12px 13px;
+  color: var(--color-heading);
+  background: #ffffff;
+  font: inherit;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.form-control textarea {
+  min-height: 118px;
+  resize: vertical;
+}
+
+.form-control input:focus,
+.form-control select:focus,
+.form-control textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(28, 95, 120, 0.14);
+  outline: none;
+}
+
+.form-control.has-error input,
+.form-control.has-error select,
+.form-control.has-error textarea {
+  border-color: var(--color-danger);
+}
+
+.field-error {
+  min-height: 18px;
+  color: var(--color-danger);
+  font-size: 0.88rem;
+}
+
+.generate-button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 6px;
+  padding: 12px 16px;
+  color: #ffffff;
+  background: var(--color-accent);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.generate-button:hover:not(:disabled) {
+  background: #164f65;
+  transform: translateY(-1px);
+}
+
+.generate-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 800ms linear infinite;
+}
+
+.result-panel {
+  min-height: 574px;
+}
+
+.result-empty,
+.api-error,
+.result-loading {
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  padding: 22px;
+  color: var(--color-muted);
+  background: var(--color-soft);
+}
+
+.api-error {
+  border-color: rgba(188, 76, 61, 0.35);
+  color: var(--color-danger);
+  background: rgba(188, 76, 61, 0.08);
+}
+
+.result-loading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.result-loading .spinner {
+  border-color: rgba(28, 95, 120, 0.24);
+  border-top-color: var(--color-accent);
+}
+
+.result-sections {
+  display: grid;
+  gap: 16px;
+}
+
+.content-card {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 18px;
+  background: #ffffff;
+}
+
+.content-card h3 {
+  margin: 0 0 10px;
+  color: var(--color-heading);
+  font-size: 1rem;
+}
+
+.content-card p {
+  margin: 0;
+  color: var(--color-body);
+}
+
+.content-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--color-body);
+}
+
+.content-card li + li {
+  margin-top: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 860px) {
+  .app-shell {
+    padding: 28px 16px;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .page-heading h1 {
+    font-size: 2rem;
+  }
+
+  .result-panel {
+    min-height: auto;
+  }
+}
