@@ -51,25 +51,25 @@ Chỉ trả về JSON hợp lệ bằng tiếng Việt với:
 - Cần tách logic validation ở frontend và backend để vừa thân thiện với người dùng, vừa đảm bảo API an toàn.
 - Cần giữ OpenRouter API key chỉ ở backend, tránh lộ key ra frontend.
 
-## 6. Ba điểm UX/UI chưa tối ưu
+## 6. Ba lỗi hoặc điểm chưa hợp lý về UI/UX/nội dung/luồng thao tác
 
-### Điểm 1: Chưa có chức năng lưu lịch sử kết quả
+### Điểm 1: Luồng thao tác chưa có lịch sử kết quả
 
-- Mô tả vấn đề: Mỗi lần generate thành công, kết quả cũ bị thay thế bởi kết quả mới.
-- Mức độ ảnh hưởng: Trung bình, vì người dùng khó so sánh nhiều phiên bản nội dung.
-- Hướng cải thiện: Thêm history panel lưu 5-10 kết quả gần nhất trong localStorage hoặc database.
+- Vấn đề: Mỗi lần người dùng bấm tạo nội dung mới, kết quả cũ bị thay thế ngay trên màn hình.
+- Mức độ ảnh hưởng: Trung bình. Người dùng khó so sánh nhiều phiên bản nội dung AI để chọn phương án tốt nhất.
+- Đề xuất cải thiện: Thêm khu vực lịch sử kết quả, lưu 5-10 lần generate gần nhất bằng localStorage hoặc database. Cho phép người dùng mở lại, so sánh và xóa từng kết quả.
 
-### Điểm 2: Chưa có nút copy/export nội dung
+### Điểm 2: UX thao tác với nội dung đầu ra chưa tiện
 
-- Mô tả vấn đề: Người dùng phải copy thủ công từng phần kết quả.
-- Mức độ ảnh hưởng: Trung bình, ảnh hưởng đến tốc độ làm việc khi cần đưa nội dung vào proposal hoặc CMS.
-- Hướng cải thiện: Thêm nút copy cho từng card và export Markdown/PDF.
+- Vấn đề: Kết quả AI đã được chia theo card nhưng chưa có nút copy/export. Người dùng phải tự bôi đen và copy từng phần.
+- Mức độ ảnh hưởng: Trung bình. Việc sử dụng nội dung cho proposal, email, CMS hoặc tài liệu marketing mất thêm thời gian và dễ copy thiếu.
+- Đề xuất cải thiện: Thêm nút copy cho từng card và nút export toàn bộ kết quả sang Markdown/PDF. Sau khi copy nên có trạng thái phản hồi như `Đã copy`.
 
-### Điểm 3: Chưa có tùy chỉnh tone of voice
+### Điểm 3: Nội dung AI chưa có tùy chỉnh giọng văn
 
-- Mô tả vấn đề: AI hiện tạo nội dung theo tone marketing chuyên nghiệp mặc định.
-- Mức độ ảnh hưởng: Thấp đến trung bình, vì một số dự án cần tone sang trọng, ngắn gọn, kỹ thuật hoặc thân thiện hơn.
-- Hướng cải thiện: Thêm select Tone of Voice và truyền vào prompt backend.
+- Vấn đề: AI hiện tạo nội dung theo tone marketing chuyên nghiệp mặc định, chưa cho người dùng chọn phong cách nội dung.
+- Mức độ ảnh hưởng: Thấp đến trung bình. Một số dự án cần tone sang trọng, ngắn gọn, kỹ thuật, thân thiện hoặc phù hợp ngành bất động sản/bán lẻ/khách sạn.
+- Đề xuất cải thiện: Thêm field `Giọng văn` hoặc `Mục tiêu nội dung`, ví dụ Chuyên nghiệp, Cao cấp, Ngắn gọn, Thân thiện, Kỹ thuật. Backend truyền lựa chọn này vào prompt để output sát nhu cầu hơn.
 
 ## 7. Hướng mở rộng tương lai
 
