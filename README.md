@@ -21,6 +21,7 @@ Tạo file môi trường nếu cần tùy chỉnh API URL:
 ```bash
 cp .env.example .env
 ```
+KEY của AI em đã gửi qua email rồi nhé, anh nhớ check mail để lấy nhé.
 
 Giá trị mặc định:
 
