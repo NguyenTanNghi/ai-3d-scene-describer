@@ -19,9 +19,8 @@ npm install
 Tạo file môi trường nếu cần tùy chỉnh API URL:
 
 ```bash
-cp .env.example .env
+.env 
 ```
-KEY của AI em đã gửi qua email rồi nhé, anh nhớ check mail để lấy nhé.
 
 Giá trị mặc định:
 
@@ -39,7 +38,7 @@ npm install
 Backend cần file `.env`:
 
 ```env
-AI_KEY=your_openrouter_api_key_here
+AI_KEY=your_openrouter_api_key_here (KEY của AI em đã gửi qua email rồi nhé,anh nhớ check mail để lấy nhé.)
 OPENROUTER_MODEL=openai/gpt-4o-mini
 PORT=5000
 ```
