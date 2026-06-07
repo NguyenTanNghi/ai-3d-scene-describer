@@ -65,23 +65,6 @@ Mở trình duyệt tại:
 http://localhost:5173
 ```
 
-## Build production
-
-Frontend:
-
-```bash
-cd frontend
-npm run build
-```
-
-Backend:
-
-```bash
-cd backend
-npm run build
-npm start
-```
-
 ## API Endpoint
 
 ### `POST /api/generate-description`
